@@ -8,14 +8,14 @@ export const AddTodoAction = (todo) => (dispatch, getState) => {
   if (!hasTodo && todo !== "") {
     dispatch({
       type: "ADD_TODO",
-      payload: [{ id: { todo, todo } }, ...todos],
+      payload: [{ id: todo, todo }, ...todos],
     });
   }
 };
 
 export const RemoveTodoAction = (todo) => (dispatch, getState) => {
   const {
-    Todo: { todo },
+    Todo: { todos },
   } = getState();
 
   dispatch({
